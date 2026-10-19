@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FillKaro</title>
+  <link rel="stylesheet" href="ui/ui.css">
+  <link rel="stylesheet" href="ui/popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="icons/icon48.png" alt="">
+      <div><b>FillKaro</b><span>One-click form filler</span></div>
+    </div>
+    <button class="btn ghost" id="openOptions" title="My details &amp; saved answers" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    </button>
+  </header>
+
+  <section class="profile" id="profileCard">
+    <div class="row"><span id="profileLabel">Your details</span><a href="#" id="editProfile">Edit</a></div>
+    <select id="profilePick" aria-label="Profile to fill with" hidden></select>
+    <div class="meter"><i id="meter" style="width:0%"></i></div>
+    <small id="profileHint"></small>
+  </section>
+
+  <div class="actions">
+    <button class="btn primary big" id="fill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Fill this page
+    </button>
+    <div class="pair">
+      <button class="btn" id="preview" title="See what will be filled, without touching the page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        Preview
+      </button>
+      <button class="btn" id="undo" title="Put back what the last fill changed on this page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-15-6.7L3 13"/></svg>
+        Undo fill
+      </button>
+    </div>
+    <button class="btn" id="learn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+      Save my answers from this page
+    </button>
+    <p class="hint">Shortcut <span class="kbd">Alt</span>+<span class="kbd">Shift</span>+<span class="kbd">F</span> or right-click any form</p>
+  </div>
+
+  <section class="result" id="result" hidden></section>
+
+  <footer>Never submits a form for you · Your data stays on this device</footer>
+
+  <script src="src/fields.js"></script>
+  <script src="src/store.js"></script>
+  <script src="ui/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FillKaro — My details</title>
+  <link rel="stylesheet" href="ui/ui.css">
+  <link rel="stylesheet" href="ui/options.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <img src="icons/icon48.png" alt="">
+        <div><b>FillKaro</b><span>Fill once. Apply everywhere.</span></div>
+      </div>
+      <div class="saved" id="saved" aria-live="polite"></div>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="details" aria-selected="true">My details</button>
+      <button role="tab" data-tab="answers" aria-selected="false">Saved answers <em id="ansCount"></em></button>
+      <button role="tab" data-tab="settings" aria-selected="false">Settings &amp; backup</button>
+    </nav>
+
+    <section id="tab-details" class="panel">
+      <div class="intro card">
+        <div>
+          <h1>Your details</h1>
+          <p>Fill these once. FillKaro matches them to form questions like “Name of candidate”, “SSC %”, “Year of passing 12th” or “Active backlogs”. Everything saves automatically and stays in this browser.</p>
+        </div>
+        <div class="progress"><div class="meter"><i id="meter"></i></div><small id="progressText"></small></div>
+      </div>
+      <div class="card profiles">
+        <label for="profileSel">Profile</label>
+        <select id="profileSel"></select>
+        <div class="btnrow">
+          <button class="btn" id="profNew">New</button>
+          <button class="btn" id="profCopy">Duplicate</button>
+          <button class="btn" id="profRename">Rename</button>
+          <button class="btn danger" id="profDelete">Delete</button>
+        </div>
+        <small class="muted">Keep separate details for placements, internships or hackathons. The popup fills with the profile chosen here.</small>
+      </div>
+      <div id="sections"></div>
+    </section>
+
+    <section id="tab-answers" class="panel" hidden>
+      <div class="card intro">
+        <div>
+          <h1>Saved answers</h1>
+          <p>Answers to questions outside your details — “Why do you want to join?”, “T-shirt size”, “How did you hear about us?”. Add them here, or fill a form yourself and click <b>Save my answers from this page</b> in the popup.</p>
+        </div>
+      </div>
+      <div class="card add">
+        <input type="text" id="newQ" placeholder="Question, e.g. Why do you want to join this company?">
+        <textarea id="newA" placeholder="Your answer"></textarea>
+        <div class="addrow"><span class="muted">Similar wordings match too.</span><button class="btn primary" id="addAns">Add answer</button></div>
+      </div>
+      <input type="search" id="search" placeholder="Search saved answers" class="search">
+      <div id="answers"></div>
+    </section>
+
+    <section id="tab-settings" class="panel" hidden>
+      <div class="card stack">
+        <h2>Filling</h2>
+        <label class="toggle"><input type="checkbox" id="setOverwrite"><span>Replace fields that already have text<small>Off: FillKaro only fills empty fields, so it never wipes what you typed.</small></span></label>
+        <label class="toggle"><input type="checkbox" id="setHighlight"><span>Highlight fields after filling<small>Green = filled, dashed amber = needs you.</small></span></label>
+        <div class="f scale">
+          <label for="setScale">CGPA → percentage multiplier</label>
+          <input type="text" inputmode="decimal" id="setScale" placeholder="9.5">
+          <small>When a form asks for a percentage you haven’t saved, FillKaro uses CGPA × this number (and percentage ÷ it for CGPA). Most colleges use 9.5; set 0 to turn off.</small>
+        </div>
+        <p class="muted">Keyboard shortcut: <span class="kbd">Alt</span>+<span class="kbd">Shift</span>+<span class="kbd">F</span>. Change it at <code>chrome://extensions/shortcuts</code>.</p>
+      </div>
+      <div class="card stack">
+        <h2>Backup</h2>
+        <p class="muted">Move your details to another browser or keep a copy. The file contains your personal details — keep it private.</p>
+        <div class="btnrow">
+          <button class="btn" id="export">Export backup (.json)</button>
+          <label class="btn" for="importFile">Import backup</label>
+          <input type="file" id="importFile" accept="application/json,.json" hidden>
+        </div>
+      </div>
+      <div class="card stack">
+        <h2>Privacy</h2>
+        <p class="muted">FillKaro stores everything in <code>chrome.storage.local</code> on this device. It has no server, sends nothing anywhere, and only touches a page when you click Fill, use the shortcut or the right-click menu. It never submits forms, never ticks consent boxes, and skips password, OTP, card, Aadhaar and PAN fields.</p>
+        <div class="btnrow"><button class="btn danger" id="wipe">Delete all my data</button></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="src/fields.js"></script>
+  <script src="src/engine.js"></script>
+  <script src="src/store.js"></script>
+  <script src="ui/options.js"></script>
+</body>
+</html>
