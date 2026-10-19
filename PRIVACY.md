@@ -16,4 +16,6 @@ FillKaro is a browser extension that fills web forms with details you save in it
 
 **Your control.** Edit or delete any detail or answer in FillKaro's settings, export a backup, or use "Delete all my data". Uninstalling the extension also deletes its stored data.
 
-**Contact.** Nitin Rai — [your support email]
+**Contact.** Open an issue at https://github.com/bt23mme076-gif/Fillkaro/issues
+
+The web version of this policy: https://fillkaro.vercel.app/privacy

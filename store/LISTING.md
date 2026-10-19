@@ -54,7 +54,9 @@ HOW TO START
 **Small promo tile:** `store/images/promo-small-440x280.png`
 **Marquee promo tile:** `store/images/promo-marquee-1400x560.png` (optional)
 
-**Homepage URL / Support URL:** your GitHub repository URL (or its Issues page for support). Leave blank if you don't have one yet.
+**Homepage URL:** `https://fillkaro.vercel.app`
+
+**Support URL:** `https://github.com/bt23mme076-gif/Fillkaro/issues` (works once the repo is public)
 
 **Mature content:** No
 
@@ -81,7 +83,7 @@ FillKaro fills web forms with details and answers the user has saved in the exte
 
 **Certify all three:** not sold to third parties · not used for unrelated purposes · not used for creditworthiness or lending.
 
-**Privacy policy URL:** a public link to `PRIVACY.md` (GitHub repo link, GitHub Pages, or a public Google Doc). Fill in your support email in it first.
+**Privacy policy URL:** `https://fillkaro.vercel.app/privacy`
 
 ## Distribution tab
 
